@@ -1,6 +1,8 @@
 .header{
   width: 100%;
   background-color: var(--bgLite);
+  margin-bottom: 60px;
+  
 }
 .container {
   display: flex;

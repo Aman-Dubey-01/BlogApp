@@ -2,56 +2,52 @@ import Image from "next/image";
 import styles from "./card.module.css";
 import Link from "next/link";
 
-const Card = () => {
+
+const Card = ({ key, item }) => {
   return (
-    <div className={styles.container} >
-      <div className={styles.imageContainer}>
-        <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-      </div>
+    <div className={styles.container} key={key}>
+      {item.img && (
+        <div className={styles.imageContainer}>
+          <Image src={item.img} alt="" fill className={styles.image} />
+        </div>
+      )}
       <div className={styles.textContainer}>
         <div className={styles.detail}>
           <span className={styles.date}>
-            16.09.2023
+            {item.createdAt.substring(0, 10)} -{" "}
           </span>
-          <span className={styles.category}>Culture</span>
+          <span className={styles.category}>{item.catSlug}</span>
         </div>
-        <Link href='/'>
-          <h1>Post title</h1>
+        <Link href={`/posts/${item.slug}`}>
+          <h1>{item.title}</h1>
         </Link>
-        <p className={styles.desc}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum cupiditate
-         doloremque, reprehenderit dignissimos voluptates voluptatibus suscipit velit ex vitae rem autem fugiat 
-         porro tempora, debitis reiciendis totam accusamus?</p>
-        <Link href='/' className={styles.link}>
+        {/* <p className={styles.desc}>{item.desc.substring(0, 60)}</p> */}
+        <div className={styles.desc} dangerouslySetInnerHTML={{ __html: item?.desc.substring(0,60) }}/>
+        <Link href={`/posts/${item.slug}`} className={styles.link}>
           Read More
         </Link>
       </div>
     </div>
   );
 };
-
-
-
-
-// const Card = ({ key, item }) => {
+// my version 
+// const Card = ({key,item}) => {
 //   return (
 //     <div className={styles.container} key={key}>
-//       {item.img && (
-//         <div className={styles.imageContainer}>
-//           <Image src={item.img} alt="" fill className={styles.image} />
-//         </div>
-//       )}
+//       <div className={styles.imageContainer}>
+//       {item.img && <Image src={item.img} alt="" fill className={styles.image} />}
+//       </div>
 //       <div className={styles.textContainer}>
 //         <div className={styles.detail}>
 //           <span className={styles.date}>
-//             {item.createdAt.substring(0, 10)} -{" "}
+//             {item.createdAt.substring(0, 10)} 
 //           </span>
-//           <span className={styles.category}>{item.catSlug}</span>
+//           <span className={styles.category}>&nbsp; {item.catSlug}</span>
 //         </div>
 //         <Link href={`/posts/${item.slug}`}>
 //           <h1>{item.title}</h1>
 //         </Link>
-//         {/* <p className={styles.desc}>{item.desc.substring(0, 60)}</p> */}
-//         <div className={styles.desc} dangerouslySetInnerHTML={{ __html: item?.desc.substring(0,60) }}/>
+//         <p className={styles.desc}>{item.desc.substring(0, 60)}</p>
 //         <Link href={`/posts/${item.slug}`} className={styles.link}>
 //           Read More
 //         </Link>
@@ -59,5 +55,9 @@ const Card = () => {
 //     </div>
 //   );
 // };
+
+
+
+
 
 export default Card;
