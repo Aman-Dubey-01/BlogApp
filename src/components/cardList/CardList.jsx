@@ -8,7 +8,7 @@ import Card from "../card/Card";
 const getData = async (page, cat) => {
   // const res = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`, {
     // https://blog-app-qip6.vercel.app/
-  const res = await fetch(`https://blog-app-qip6.vercel.app/api/posts?page=${page}&cat=${cat || ""}`, {
+  const res = await fetch(`${process.env.DOMAIN_LINK}/api/posts?page=${page}&cat=${cat || ""}`, {
     cache: "no-store",
   });
 

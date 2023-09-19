@@ -5,17 +5,22 @@ import Footer from "@/components/footer/Footer";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/providers/ThemeProvider";
 import AuthProvider from "@/providers/AuthProvider";
+import Head from "next/head";
+import icon from "./icon.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "BlogApp",
+  title: "PenChapters",
   description: "The best blog app!",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    <Head>
+      <link rel="shortcut icon" href={icon} />
+    </Head>
       <body className={inter.className}>
         <AuthProvider>
           <ThemeContextProvider>
