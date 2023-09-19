@@ -6,7 +6,7 @@ import Image from "next/image";
 const getData = async () => {
   // const res = await fetch("http://localhost:3000/api/categories", {
     // https://blog-app-qip6.vercel.app/
-  const res = await fetch("/api/categories", {
+  const res = await fetch("https://blog-app-qip6.vercel.app/api/categories", {
     cache: "no-store",
   });
 
