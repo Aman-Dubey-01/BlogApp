@@ -6,7 +6,9 @@ import Comments from "@/components/comments/Comments";
 
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  // const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+    // https://blog-app-qip6.vercel.app/
+  const res = await fetch(`/api/posts/${slug}`, {
     cache: "no-store",
   });
 
