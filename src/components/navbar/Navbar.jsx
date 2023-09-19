@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className={styles.container}>
         <div className={styles.logo}>
           <Image src="/logoicon.png" alt="logo" width={32} height={32} />
-          <span>&nbsp;𝐏𝐞𝐧𝐂𝐡𝐚𝐩𝐭𝐞𝐫𝐬</span>
+          <p>&nbsp;𝐏𝐞𝐧𝐂𝐡𝐚𝐩𝐭𝐞𝐫𝐬</p>
         </div>
         {/* <div className={styles.social}>
           <Image src="/facebook.png" alt="facebook" width={24} height={24} />
@@ -20,11 +20,11 @@ const Navbar = () => {
           <Image src="/youtube.png" alt="youtube" width={24} height={24} />
         </div> */}
         <div className={styles.links}>
-          <ThemeToggle />
           <Link href="/" className={styles.link}>Homepage</Link>
           <Link href="/" className={styles.link}>Contact</Link>
           <Link href="/" className={styles.link}>About</Link>
           <AuthLinks />
+          <ThemeToggle />
         </div>
       </div>
     </div>
