@@ -13,11 +13,11 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import ReactQuill from "react-quill";
 
 const WritePage = () => {
   const { status } = useSession();
   const router = useRouter();
+  const ReactQuill = typeof window === "object" ? require("react-quill") : () => false;
 
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
