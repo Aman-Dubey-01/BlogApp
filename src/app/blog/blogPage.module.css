@@ -5,8 +5,13 @@
     text-align: center;
     text-transform: capitalize;
   }
+  .container{
+    margin-top: 130px;
+
+  }
   
   .content{
+    
     display: flex;
     gap: 50px;
   }
