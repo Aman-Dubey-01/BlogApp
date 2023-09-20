@@ -37,7 +37,7 @@ const SinglePage = async ({ params }) => {
             )} 
             <div className={styles.userTextContainer}>
               <span className={styles.username}>{data?.user?.name}</span>
-              <span className={styles.date}>01.01.2024</span>
+              <span className={styles.date}>{data?.createdAt.substring(0, 10)}</span>
             </div>
           </div>
         </div>
@@ -64,51 +64,3 @@ const SinglePage = async ({ params }) => {
 };
 
 export default SinglePage;
-
-
-
-
-
-// const SinglePage = async ({ params }) => {
-//   const { slug } = params;
-
-
-//   return (
-//     <div className={styles.container}>
-//       <div className={styles.infoContainer}>
-//         <div className={styles.textContainer}>
-//           <h1 className={styles.title}>Title of single page</h1>
-//           <div className={styles.user}>
-//               <div className={styles.userImageContainer}>
-//                 <Image src="/p1.jpeg" alt="" fill className={styles.avatar} />
-//               </div>
-//             <div className={styles.userTextContainer}>
-//               <span className={styles.username}>Aman Dubey</span>
-//               <span className={styles.date}>01.01.2024</span>
-//             </div>
-//           </div>
-//         </div>
-//           <div className={styles.imageContainer}>
-//             <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-//           </div>
-//       </div>
-//       <div className={styles.content}>
-//         <div className={styles.post}>
-//           <div
-//             className={styles.description}>
-//               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae obcaecati fugit a est magnam illo voluptates, adipisci ratione qui porro ullam nesciunt provident, fuga, eaque facilis dolor molestias numquam? Pariatur!</p>
-//               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae obcaecati fugit a est magnam illo voluptates, adipisci ratione qui porro ullam nesciunt provident, fuga, eaque facilis dolor molestias numquam? Pariatur!</p>
-//               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae obcaecati fugit a est magnam illo voluptates, adipisci ratione qui porro ullam nesciunt provident, fuga, eaque facilis dolor molestias numquam? Pariatur!</p>
-//             </div>
-//           <div className={styles.comment}>
-//             <Comments postSlug={slug}/>
-//           </div>
-//         </div>
-//         <Menu />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default SinglePage;
-
