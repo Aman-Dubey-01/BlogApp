@@ -7,8 +7,6 @@ import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 
-
-
 const fetcher = async (url) => {
   const res = await fetch(url);
 
@@ -25,10 +23,11 @@ const fetcher = async (url) => {
 const Comments = ({ postSlug }) => {
   const { status } = useSession();
 
+
   const { data, mutate, isLoading } = useSWR(
-    `$${process.env.DOMAIN_LINK}/api/comments?postSlug=${postSlug}`,
     // `http://localhost:3000/api/comments?postSlug=${postSlug}`,
-    // https://blog-app-qip6.vercel.app/
+  
+    `/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 
@@ -88,4 +87,3 @@ const Comments = ({ postSlug }) => {
 };
 
 export default Comments;
-

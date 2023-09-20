@@ -18,6 +18,7 @@ const getData = async () => {
 };
 
 const CategoryList = async () => {
+  
   const data = await getData();
   return (
     <div id="category" className={styles.container}>
