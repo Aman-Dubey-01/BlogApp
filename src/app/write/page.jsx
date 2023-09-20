@@ -13,6 +13,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
+//
 
 const WritePage = () => {
   const { status } = useSession();
