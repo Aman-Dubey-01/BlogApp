@@ -20,7 +20,7 @@ const getData = async () => {
 const CategoryList = async () => {
   const data = await getData();
   return (
-    <div className={styles.container}>
+    <div id="category" className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
         {data?.map((item) => (
@@ -38,7 +38,8 @@ const CategoryList = async () => {
                 className={styles.image}
               />
             )}
-            {item.title}
+            <span className={styles.item_title}>{item.title}</span>
+            
           </Link>
         ))}
       </div>

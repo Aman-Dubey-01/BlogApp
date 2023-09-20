@@ -1,0 +1,29 @@
+.button {
+    padding: 8px;
+    color: var(--softTextColor);
+    text-decoration: none;
+
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: none;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 0 var(--bg);
+
+    display: flex;
+    align-items: Center;
+    justify-content: center;
+    gap: 5px;
+    font-size: .9rem;
+    letter-spacing: .5px;
+
+}
+
+.button:hover {
+    color: var(--bg);
+    box-shadow: inset 0 -80px 0 0 var(--textColor);
+}
+
+.button:active {
+    transform: scale(0.9);
+}

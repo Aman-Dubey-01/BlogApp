@@ -2,6 +2,27 @@
   cursor: pointer;
 }
 
+
+.link_inner{
+    display: flex;
+    align-items: Center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1rem;
+    letter-spacing: .5px;
+    color: var(--softTextColor);  
+}
+.link_button{
+    font-size: .8rem;
+    letter-spacing: 1px;
+    color: var(--bg);  
+    background-color: var(--textColor);
+    padding: 8px 16px;
+    border-radius: 6px;
+    
+
+}
+
 .burger {
   width: 20px;
   height: 16px;

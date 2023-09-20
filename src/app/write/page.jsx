@@ -15,10 +15,13 @@ import {
 import { app } from "@/utils/firebase";
 import dynamic from "next/dynamic";
 
+
+
 const WritePage = () => {
   const { status } = useSession();
-  const router = useRouter();
+
   const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+  const router = useRouter();
 
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
@@ -50,7 +53,7 @@ const WritePage = () => {
               break;
           }
         },
-        (error) => {},
+        (error) => { },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
