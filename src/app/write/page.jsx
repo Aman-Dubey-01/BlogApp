@@ -13,6 +13,9 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
+
+
+import { BsPlusCircle, BsPlusLg, BsUpload, BsFillCameraVideoFill } from 'react-icons/bs';
 //
 
 const WritePage = () => {
@@ -98,12 +101,6 @@ const WritePage = () => {
 
   return (
     <div className={styles.container}>
-      <input
-        type="text"
-        placeholder="Title"
-        className={styles.input}
-        onChange={(e) => setTitle(e.target.value)}
-      />
       <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
         <option value="sports">sports</option>
         <option value="fashion">fashion</option>
@@ -112,38 +109,37 @@ const WritePage = () => {
         <option value="fitness">fitness</option>
         <option value="tech">tech</option>
       </select>
+
+      <input
+        type="text"
+        placeholder="Enter title of your story..."
+        className={styles.input}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+
       <div className={styles.editor}>
-        <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
-        </button>
-        {open && (
-          <div className={styles.add}>
+        <div className={styles.upload}>
+          <button className={styles.button} onClick={() => setOpen(!open)}>
             <input
               type="file"
               id="image"
               onChange={(e) => setFile(e.target.files[0])}
               style={{ display: "none" }}
             />
-            <button className={styles.addButton}>
-              <label htmlFor="image">
-                <Image src="/image.png" alt="" width={16} height={16} />
-              </label>
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/external.png" alt="" width={16} height={16} />
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
-            </button>
-          </div>
-        )}
-        <ReactQuill
-          className={styles.textArea}
-          theme="bubble"
-          value={value}
-          onChange={setValue}
-          placeholder="Tell your story..."
-        />
+            <label htmlFor="image">
+              Uplaod image
+            </label>
+          </button>
+        </div>
+        <div className={styles.quill}>
+          <ReactQuill
+            className={styles.textArea}
+            theme="bubble"
+            value={value}
+            onChange={setValue}
+            placeholder="Write your story..."
+          />
+        </div>
       </div>
       <button className={styles.publish} onClick={handleSubmit}>
         Publish

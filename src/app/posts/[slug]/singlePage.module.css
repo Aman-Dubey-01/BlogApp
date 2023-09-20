@@ -1,4 +1,11 @@
+.container{
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
 .infoContainer {
+  padding-top: 50px;
   display: flex;
   align-items: center;
   gap: 50px;
@@ -9,8 +16,12 @@
 }
 
 .title {
-  font-size: 64px;
+  font-size: 3.5rem;
+  letter-spacing: 2px;
   margin-bottom: 50px;
+  font-family: "Abel", sans-serif;
+  font-weight: bold;
+  color: rgb(192, 158, 23);
 }
 
 .user {
@@ -38,7 +49,8 @@
 }
 
 .username {
-  font-size: 20px;
+  font-size: .9rem;
+  letter-spacing: 1px;
   font-weight: 500;
 }
 
@@ -46,6 +58,11 @@
   flex: 1;
   height: 350px;
   position: relative;
+}
+
+.imageContainer img{
+  border-radius: 10px;
+ box-shadow: 6px 5px 6px var(--textColor);
 }
 
 .image {
@@ -63,8 +80,9 @@
 }
 
 .description p {
-  font-size: 20px;
+  font-size: 1.1rem;
   font-weight: 300;
+  line-height: 28px;
   margin-bottom: 20px;
 }
 

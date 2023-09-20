@@ -1,42 +1,68 @@
 .container{
-  margin-top: 120px;
+  padding-top: 80px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 80px;
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
 .select{
-  margin-bottom: 50px;
   padding: 10px 20px;
-  margin-left: 50px;
-  width: max-content;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #80cc7e;
+  width: 180px;
+  border-radius: 8px;
+}
+
+
+.select option{
+  background-color: #80cc7e;
+  font-size: 1.3rem;
+  padding: 50px 20px;
+  text-transform: uppercase;
 }
 
 .editor {
-  background-color: var(--softBg);
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  height: 500px;
-  overflow-y: scroll;
+  /* height: 500px; */
+  /* overflow-y: scroll; */
   position: relative;
 }
 
-.button,
-.addButton {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: transparent;
-  border: 1px solid var(--textColor);
+.editor .upload{
+  width: max-content;
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  margin-bottom: 40px;
+}
+.editor .quill{
+  min-height: 50px;
+  border: 1px solid var(--softTextColor);
+  border-radius: 1.2rem;
+  outline: var(--softBg);
+  background-color: transparent;
+  color: var(--textColor);
+  background-color: var(--softBg);
 }
 
-.addButton {
-  border-color: #1a8917;
+.button{
+  width: 100%;
+  padding: 20px 30px;
+  border: none;
+  background-color: #1a8917;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-radius: 20px;
 }
+
 
 .add {
   display: flex;
@@ -49,10 +75,12 @@
 }
 
 .input{
-  padding: 50px;
-  font-size: 64px;
-  border: none;
-  outline: none;
+  margin: 40px 0;
+  padding: 20px 50px;
+  font-size: 1.5rem;
+  border: 1px solid var(--textColor);
+  border-radius: 1.2rem;
+  outline: var(--softBg);
   background-color: transparent;
   color: var(--textColor);
   background-color: var(--softBg);
@@ -68,12 +96,14 @@
 
 .publish{
   position: absolute;
-  top: 0px;
+  top:30px;
   right: 0px;
   padding: 10px 20px;
   border: none;
   background-color: #1a8917;
   color: white;
   cursor: pointer;
+  font-size: 1.2rem;
+  text-transform: uppercase;
   border-radius: 20px;
 }
