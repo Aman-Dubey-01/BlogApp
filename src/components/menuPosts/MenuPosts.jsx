@@ -6,56 +6,56 @@ import styles from "./menuPosts.module.css"
 const MenuPosts = ({ withImage }) => {
   return (
     <div className={styles.items}>
-      <Link href="/" className={styles.item}>
+      <Link href="/posts/ms-dhoni-an-inspiration-to-many" className={styles.item}>
         {withImage && (
           <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+            <Image src="/sports.png" alt="" fill className={styles.image} />
           </div>
         )}
         <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.travel}`}>Travel</span>
+          <span className={`${styles.category} ${styles.sports}`}>Sports</span>
           <h3 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          MS Dhoni – An Inspiration to Many
           </h3>
           <div className={styles.detail}>
-            <span className={styles.username}>John Doe</span>
-            <span className={styles.date}> - 10.03.2023</span>
+            <span className={styles.username}>Aman</span>
+            <span className={styles.date}> - 20.09.2023</span>
           </div>
         </div>
       </Link>
-      <Link href="/" className={styles.item}>
+      <Link href="/posts/7-effective-fitness-tips-for-beginners" className={styles.item}>
         {withImage && (
           <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+            <Image src="/fitness.jpg" alt="" fill className={styles.image} />
           </div>
         )}
         <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.food}`}>Food</span>
+          <span className={`${styles.category} ${styles.food}`}>Fitness</span>
           <h3 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          7 Effective Fitness Tips For Beginners
           </h3>
           <div className={styles.detail}>
-            <span className={styles.username}>John Doe</span>
-            <span className={styles.date}> - 10.03.2023</span>
+            <span className={styles.username}>Bhovesh</span>
+            <span className={styles.date}> - 20.09.2023</span>
           </div>
         </div>
       </Link>
-      <Link href="/" className={styles.item}>
+      <Link href="/posts/chatgpt-vs-bard-which-is-better-for-coding" className={styles.item}>
         {withImage && (
           <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+            <Image src="/coding.png" alt="" fill className={styles.image} />
           </div>
         )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.fashion}`}>
-            Fashion
+            Tech
           </span>
           <h3 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          ChatGPT Vs Bard: Which is better for coding?
           </h3>
           <div className={styles.detail}>
-            <span className={styles.username}>John Doe</span>
-            <span className={styles.date}> - 10.03.2023</span>
+            <span className={styles.username}>Aman</span>
+            <span className={styles.date}> - 21.09.2023</span>
           </div>
         </div>
       </Link>

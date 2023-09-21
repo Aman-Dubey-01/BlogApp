@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const Featured = () => {
   return (
@@ -11,14 +12,20 @@ const Featured = () => {
       
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src="/Productive.jpg" alt="" fill className={styles.image} />
+          <Image src="/featured.jpeg" alt="" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
-          <h1 className={styles.postTitle}><b> Mastering the Art of Productivity:</b> A Comprehensive Guide </h1>
+          <h1 className={styles.postTitle}>
+          ChatGPT Vs Bard: Which is better for coding?
+           </h1>
           <p className={styles.postDesc}>
-          Unlock your true potential and regain control of your time with our 'Mastering the Art of Productivity' guide. Discover proven strategies to streamline your daily tasks, set meaningful goals, and overcome procrastination. Start your journey to productivity mastery today !!
-          </p>
-          <button className={styles.button}>Read More</button>
+          Google Bard and ChatGPT are some of the most popular AI Chatbots in the market, capable of generating text, 
+          translating languages, and answering questions. While they share similarities, there are notable differences 
+          between the two. Additionally, Google Bard has recently received significant upgrades that make it a more 
+          powerful competitor to ChatGPT.</p>
+          <button className={styles.button}>
+          <Link href="/posts/chatgpt-vs-bard-which-is-better-for-coding">Read More</Link>
+          </button>
         </div>
       </div>
     </div>
