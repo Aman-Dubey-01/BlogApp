@@ -19,19 +19,20 @@ const Navbar = () => {
             <p>&nbsp;𝐏𝐞𝐧𝐂𝐡𝐚𝐩𝐭𝐞𝐫𝐬</p>
           </Link>
         </div>
+        <div className={styles.togglebtn}>
+          <ThemeToggle />
+        </div>
         <div className={styles.links}>
           <div className={styles.link}>
-            <Button value="Home" href="/" ><ImHome /> </Button>
+            <Button value="Home" href="/" ><ImHome className={styles.link_icon} /> </Button>
           </div>
           <div className={styles.link}>
-            <Button value="Category" href="/#category" ><BiCategory /> </Button>
+            <Button value="Category" href="/#category" ><BiCategory className={styles.link_icon} /> </Button>
           </div>
           <div className={styles.link}>
-
-            <Button value="About" href="/#footer"><GrContactInfo /> </Button>
+            <Button value="About" href="/#footer"><GrContactInfo className={styles.link_icon} /> </Button>
           </div>
           <AuthLinks />
-          <ThemeToggle />
         </div>
       </div>
     </div>

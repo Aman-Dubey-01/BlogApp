@@ -82,6 +82,10 @@
   .imgContainer {
     display: none;
   }
+
+  .postDesc {
+    width: 95%;
+  }
 }
 
 @media screen and (max-width: 768px) {

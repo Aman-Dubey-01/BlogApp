@@ -28,6 +28,11 @@
   align-items: center;
   gap: 10px;
 }
+.logo_item{
+  display: flex;
+  align-items: center;
+
+}
 
 .logoText {
   font-size: 24px;
@@ -35,6 +40,10 @@
 
 .desc {
   font-weight: 300;
+  width: 80%;
+  letter-spacing: .5px;
+  line-height: 20px;
+  font-size: .9rem;
 }
 
 .icons {
@@ -59,6 +68,13 @@
 
 .listTitle {
   font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.list_item{
+  font-size: .9rem;
+  letter-spacing: .2px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -76,9 +92,21 @@
     width: 100%;
     justify-content: space-between;
   }
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .desc{
+    display: none;
+  }
 }
 @media screen and (max-width: 640px) {
   .links {
     font-size: 14px;
   }
+
+  
 }

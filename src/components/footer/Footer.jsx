@@ -9,43 +9,56 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.info}>
           <div className={styles.logo}>
-            <Image src="/logo.png" alt="lama blog" width={50} height={50} />
-            <h1 className={styles.logoText}>Lamablog</h1>
+            <Link href="/" className={styles.logo_item}>
+              <Image src="/logoicon.png" alt="logo" width={32} height={32} />
+              <p className={styles.logoText}>&nbsp;𝐏𝐞𝐧𝐂𝐡𝐚𝐩𝐭𝐞𝐫𝐬</p>
+            </Link>
           </div>
           <p className={styles.desc}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
-            necessitatibus similique aspernatur obcaecati veritatis. Aperiam cum
-            porro sequi, totam minima consequuntur, aspernatur deleniti vero
-            repellendus dorales.
+            "PenChapters: Where Stories Unfold. Your premier platform for crafting, sharing,
+            and exploring captivating narratives. Join the PenChapters community today!"
           </p>
           <div className={styles.icons}>
             <Image src="/facebook.png" alt="" width={18} height={18} />
             <Image src="/instagram.png" alt="" width={18} height={18} />
-            <Image src="/tiktok.png" alt="" width={18} height={18} />
             <Image src="/youtube.png" alt="" width={18} height={18} />
           </div>
         </div>
         <div className={styles.links}>
           <div className={styles.list}>
             <span className={styles.listTitle}>Links</span>
-            <Link href="/">Homepage</Link>
-            <Link href="/">Blog</Link>
-            <Link href="/">About</Link>
-            <Link href="/">Contact</Link>
+            <Link href="/" className={styles.list_item}>Homepage</Link>
+            <Link href="/" className={styles.list_item}>Cayegory</Link>
+            <Link href="/" className={styles.list_item}>Write</Link>
           </div>
           <div className={styles.list}>
             <span className={styles.listTitle}>Tags</span>
-            <Link href="/">Style</Link>
-            <Link href="/">Fashion</Link>
-            <Link href="/">Coding</Link>
-            <Link href="/">Travel</Link>
+            <Link
+              href={"/blog?cat=sports"}
+              className={styles.category} >
+              <span className={styles.list_item}>Sports</span>
+            </Link>
+            <Link
+              href={"/blog?cat=sports"}
+              className={styles.category} >
+              <span className={styles.list_item}>Fashion</span>
+            </Link>
+            <Link
+              href={"/blog?cat=sports"}
+              className={styles.category} >
+              <span className={styles.list_item}>Fitness</span>
+            </Link>
+            <Link
+              href={"/blog?cat=sports"}
+              className={styles.category} >
+              <span className={styles.list_item}>Tech</span>
+            </Link>
           </div>
           <div className={styles.list}>
             <span className={styles.listTitle}>Social</span>
-            <Link href="/">Facebook</Link>
-            <Link href="/">Instagram</Link>
-            <Link href="/">Tiktok</Link>
-            <Link href="/">Youtube</Link>
+            <Link href="/" className={styles.list_item}>Facebook</Link>
+            <Link href="/" className={styles.list_item}>Instagram</Link>
+            <Link href="/" className={styles.list_item}>Youtube</Link>
           </div>
         </div>
       </div>
