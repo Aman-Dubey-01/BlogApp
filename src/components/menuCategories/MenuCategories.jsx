@@ -6,25 +6,25 @@ const MenuCategories = () => {
   return (
     <div className={styles.categoryList}>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=sports"
         className={`${styles.categoryItem} ${styles.style}`}
       >
-        Style
+        Sports
       </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.fashion}`}>
+      <Link href="/blog?cat=fashion" className={`${styles.categoryItem} ${styles.fashion}`}>
         Fashion
       </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.food}`}>
+      <Link href="/blog?cat=food" className={`${styles.categoryItem} ${styles.food}`}>
         Food
       </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.travel}`}>
+      <Link href="/blog?cat=travel" className={`${styles.categoryItem} ${styles.travel}`}>
         Travel
       </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.culture}`}>
-        Culture
+      <Link href="/blog?cat=fitness" className={`${styles.categoryItem} ${styles.culture}`}>
+        Fitness
       </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.coding}`}>
-        Coding
+      <Link href="/blog?cat=tech" className={`${styles.categoryItem} ${styles.coding}`}>
+        Tech
       </Link>
     </div>
   );
