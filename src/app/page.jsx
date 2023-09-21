@@ -3,13 +3,16 @@ import Featured from "@/components/featured/Featured";
 import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
 import Menu from "@/components/Menu/Menu";
+import Loader from "@/components/Loader/Loader";
 
 
-export default function Home({searchParams}) {
+export default function Home({ searchParams }) {
   const page = parseInt(searchParams.page) || 1;
 
 
-  return <div className={styles.container}>
+  return <div> 
+  <Loader />
+  <div className={styles.container}>
     <div className="container">
       <div className="wrapper">
         <Featured />
@@ -22,5 +25,6 @@ export default function Home({searchParams}) {
         </div>
       </div>
     </div>
+  </div>
   </div>;
 }
