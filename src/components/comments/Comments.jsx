@@ -6,6 +6,7 @@ import Image from "next/image";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
+import { Smallspinner } from "../Loading/LoadingSpinner";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -21,6 +22,9 @@ const fetcher = async (url) => {
 };
 
 const Comments = ({ postSlug }) => {
+  const [loading, setLoading] = useState(false);
+
+  
   const { status } = useSession();
 
 
@@ -34,11 +38,14 @@ const Comments = ({ postSlug }) => {
   const [desc, setDesc] = useState("");
 
   const handleSubmit = async () => {
+    setLoading(true)
     await fetch("/api/comments", {
       method: "POST",
       body: JSON.stringify({ desc, postSlug }),
     });
+    setLoading(false)
     mutate();
+    setDesc('')
   };
 
   return (
@@ -49,10 +56,11 @@ const Comments = ({ postSlug }) => {
           <textarea
             placeholder="write a comment..."
             className={styles.input}
+            value={desc}
             onChange={(e) => setDesc(e.target.value)}
           />
           <button className={styles.button} onClick={handleSubmit}>
-            Send
+          {!loading ? "Send" : <Smallspinner />}
           </button>
         </div>
       ) : (
@@ -60,7 +68,7 @@ const Comments = ({ postSlug }) => {
       )}
       <div className={styles.comments}>
         {isLoading
-          ? "loading"
+          ? <><Smallspinner /></>
           : data?.map((item) => (
               <div className={styles.comment} key={item._id}>
                 <div className={styles.user}>

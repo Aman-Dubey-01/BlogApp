@@ -1,9 +1,10 @@
 "use client";
 
+import "react-quill/dist/quill.bubble.css";
+import 'react-quill/dist/quill.snow.css';
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
-import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import {
@@ -16,7 +17,8 @@ import { app } from "@/utils/firebase";
 
 
 import { BsPlusCircle, BsPlusLg, BsUpload, BsFillCameraVideoFill } from 'react-icons/bs';
-//
+import { Loading } from "@/components/Loading/LoadingSpinner";
+
 
 const WritePage = () => {
   const { status } = useSession();
@@ -29,9 +31,30 @@ const WritePage = () => {
   const [value, setValue] = useState("");
   const [title, setTitle] = useState("");
   const [catSlug, setCatSlug] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const [uploadProgress, setUploadProgress] = useState(0);
+
+
+
+  const modules = {
+    toolbar: [
+      // ...
+      [{ 'header': '1' }, { 'header': '2' }],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ 'color': [] }, { 'background': [] }],
+      [{ 'align': [] }],
+      ['link', 'image'],
+      [{ 'size': ['small', false, 'large', 'huge'] }],
+      ['clean']
+    ],
+  };
+
 
   useEffect(() => {
     const storage = getStorage(app);
+
     const upload = () => {
       const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, name);
@@ -43,6 +66,7 @@ const WritePage = () => {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setUploadProgress(progress);
           console.log("Upload is " + progress + "% done");
           switch (snapshot.state) {
             case "paused":
@@ -57,6 +81,7 @@ const WritePage = () => {
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
+            setUploadProgress(100);
           });
         }
       );
@@ -82,6 +107,7 @@ const WritePage = () => {
       .replace(/^-+|-+$/g, "");
 
   const handleSubmit = async () => {
+    setLoading(true)
     const res = await fetch("/api/posts", {
       method: "POST",
       body: JSON.stringify({
@@ -95,12 +121,15 @@ const WritePage = () => {
 
     if (res.status === 200) {
       const data = await res.json();
+      setLoading(false)
       router.push(`/posts/${data.slug}`);
     }
   };
 
   return (
     <div className={styles.container}>
+    {!loading ?
+    <>
       <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
         <option value="sports">sports</option>
         <option value="fashion">fashion</option>
@@ -126,11 +155,35 @@ const WritePage = () => {
               onChange={(e) => setFile(e.target.files[0])}
               style={{ display: "none" }}
             />
-            <label htmlFor="image">
-              Uplaod image
-            </label>
+            {/* <label htmlFor="image">
+              Uplaod image &nbsp;<span><BsUpload /></span>
+            </label> */}
+
+            {uploadProgress > 0 && uploadProgress < 100 ?
+              <div className={styles['loading-spinner']}>
+                <div className={styles.spinner} >
+                </div>
+                <span className={styles['progress-text']} >{uploadProgress.toFixed(0)}%</span>
+              </div> :
+              <label htmlFor="image">
+                {/* Uplaod image &nbsp;<span><BsUpload /></span> */}
+
+                {uploadProgress == 100 ?
+                  <label htmlFor="image">
+                    Upload successful
+                  </label> :
+                  <>Uplaod image &nbsp;<span><BsUpload /></span>
+                  </>
+                }
+              </label>
+            }
+
           </button>
+
+
         </div>
+
+
         <div className={styles.quill}>
           <ReactQuill
             className={styles.textArea}
@@ -138,12 +191,18 @@ const WritePage = () => {
             value={value}
             onChange={setValue}
             placeholder="Write your story..."
+            modules={modules}
           />
         </div>
       </div>
+
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
       </button>
+      </>
+
+      :
+      <Loading />}
     </div>
   );
 };
