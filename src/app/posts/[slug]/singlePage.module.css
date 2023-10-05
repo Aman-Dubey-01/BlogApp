@@ -66,7 +66,7 @@
 
 .imageContainer img{
   border-radius: 10px;
- box-shadow: 6px 5px 6px var(--textColor);
+ box-shadow: 2px 2px 2px var(--textColor);
 }
 
 .image {
@@ -122,8 +122,17 @@
   .title {
     font-size: 2rem;
   }
+  .imageContainer {
+    width: 95%;
+    position: relative;
+    flex: 0 0 300px;
+  }
 
   .description p{
     font-size: 1rem;
+  }
+  .textContainer {
+    flex: 1;
+    text-align: center;
   }
 }

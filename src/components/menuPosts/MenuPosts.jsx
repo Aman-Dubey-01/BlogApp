@@ -30,7 +30,7 @@ const MenuPosts = ({ withImage }) => {
           </div>
         )}
         <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.food}`}>Fitness</span>
+          <span className={`${styles.category} ${styles.fitness}`}>Fitness</span>
           <h3 className={styles.postTitle}>
           7 Effective Fitness Tips For Beginners
           </h3>
@@ -47,7 +47,7 @@ const MenuPosts = ({ withImage }) => {
           </div>
         )}
         <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.fashion}`}>
+          <span className={`${styles.category} ${styles.tech}`}>
             Tech
           </span>
           <h3 className={styles.postTitle}>

@@ -6,18 +6,22 @@ import AuthLinks from "../authLinks/AuthLinks";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 
 import { ImHome } from 'react-icons/im';
-import { BiCategory } from 'react-icons/bi';
-import { GrContactInfo } from 'react-icons/gr';
+import { BiCategory,BiUserCircle } from 'react-icons/bi';
 import { Button } from "../UI/Button";
+import { SearchBar } from "../searchBar/SearchBar";
 const Navbar = () => {
   return (
     <div className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link href="/" className={styles.logo_item}>
-            <Image src="/logoicon.png" alt="logo" width={32} height={32} />
-            <p>&nbsp;𝐏𝐞𝐧𝐂𝐡𝐚𝐩𝐭𝐞𝐫𝐬</p>
+            <Image className={styles.logo_img} src="/logoicon.png" alt="logo" width={32} height={32} />
+            {/* <p>&nbsp;𝐏𝐞𝐧𝐂𝐡𝐚𝐩𝐭𝐞𝐫𝐬</p> */}
+            <div className={styles.logo_text}>&nbsp;𝐏𝐞𝐧𝐂𝐡𝐚𝐩𝐭𝐞𝐫𝐬</div>
           </Link>
+        </div>
+        <div className="search">
+          <SearchBar />
         </div>
         <div className={styles.togglebtn}>
           <ThemeToggle />
@@ -27,11 +31,9 @@ const Navbar = () => {
             <Button value="Home" href="/" ><ImHome className={styles.link_icon} /> </Button>
           </div>
           <div className={styles.link}>
-            <Button value="Category" href="/#category" ><BiCategory className={styles.link_icon} /> </Button>
+            <Button value="Blog" href="/blog" ><BiCategory className={styles.link_icon} /> </Button>
           </div>
-          <div className={styles.link}>
-            <Button value="About" href="/#footer"><GrContactInfo className={styles.link_icon} /> </Button>
-          </div>
+          
           <AuthLinks />
         </div>
       </div>

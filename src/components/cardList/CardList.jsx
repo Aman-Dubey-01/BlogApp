@@ -2,9 +2,7 @@ import React from "react";
 import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
 import Card from "../card/Card";
-// import fetch from 'node-fetch'
-
-
+import { Button } from "../UI/Button";
 
 const getData = async (page, cat) => {
   // const res = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`, {
@@ -31,12 +29,15 @@ const CardList = async ( {page, cat} ) => {
   return (
     
     <div className={styles.container}>
-      <h1 className={styles.title}>Recent Posts</h1>
+      <h1 className={styles.title}>{cat} Posts</h1>
       <div className={styles.posts}>
       {posts?.map((item) => (
           <Card  key={item._id} item={item}/>
         ))}
       </div>
+      <div >
+          <button href='/blog' className={styles.button}>Explore Blog</button>
+        </div>
       <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev}/>
     </div>
   );

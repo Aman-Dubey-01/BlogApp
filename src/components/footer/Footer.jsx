@@ -18,18 +18,13 @@ const Footer = () => {
             "PenChapters: Where Stories Unfold. Your premier platform for crafting, sharing,
             and exploring captivating narratives. Join the PenChapters community today!"
           </p>
-          <div className={styles.icons}>
-            <Image src="/facebook.png" alt="" width={18} height={18} />
-            <Image src="/instagram.png" alt="" width={18} height={18} />
-            <Image src="/youtube.png" alt="" width={18} height={18} />
-          </div>
         </div>
         <div className={styles.links}>
           <div className={styles.list}>
             <span className={styles.listTitle}>Links</span>
             <Link href="/" className={styles.list_item}>Homepage</Link>
-            <Link href="/" className={styles.list_item}>Cayegory</Link>
-            <Link href="/" className={styles.list_item}>Write</Link>
+            <Link href="/#category" className={styles.list_item}>Category</Link>
+            <Link href="/write" className={styles.list_item}>Write</Link>
           </div>
           <div className={styles.list}>
             <span className={styles.listTitle}>Tags</span>
@@ -39,17 +34,12 @@ const Footer = () => {
               <span className={styles.list_item}>Sports</span>
             </Link>
             <Link
-              href={"/blog?cat=sports"}
-              className={styles.category} >
-              <span className={styles.list_item}>Fashion</span>
-            </Link>
-            <Link
-              href={"/blog?cat=sports"}
+              href={"/blog?cat=fitness"}
               className={styles.category} >
               <span className={styles.list_item}>Fitness</span>
             </Link>
             <Link
-              href={"/blog?cat=sports"}
+              href={"/blog?cat=tech"}
               className={styles.category} >
               <span className={styles.list_item}>Tech</span>
             </Link>

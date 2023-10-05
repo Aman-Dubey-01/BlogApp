@@ -1,7 +1,6 @@
 "use client";
 
 import "react-quill/dist/quill.bubble.css";
-import 'react-quill/dist/quill.snow.css';
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
@@ -16,7 +15,7 @@ import {
 import { app } from "@/utils/firebase";
 
 
-import { BsPlusCircle, BsPlusLg, BsUpload, BsFillCameraVideoFill } from 'react-icons/bs';
+import {  BsUpload } from 'react-icons/bs';
 import { Loading } from "@/components/Loading/LoadingSpinner";
 
 

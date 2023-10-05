@@ -67,12 +67,23 @@
   transition: all 0.2s ease-out;
 }
 
+@media screen and (max-width: 1024px) {
+
+  .link_icon{
+    display: none;
+  }
+  
+
+}
 @media screen and (max-width: 768px) {
   .burger {
     display: flex;
     margin-left: 20px;
   }
   .link_inner{
+    display: none;
+  }
+  .link_icon{
     display: none;
   }
   
@@ -85,6 +96,9 @@
     
   }
   .link_rev{
+    display: none;
+  }
+  .link_icon{
     display: none;
   }
 

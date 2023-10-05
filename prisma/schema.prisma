@@ -69,7 +69,7 @@ model Post {
   id        String    @id @default(cuid()) @map("_id")
   createdAt DateTime  @default(now())
   slug      String    @unique
-  title     String
+  title     String    @map("title")
   desc      String
   img       String?
   views     Int       @default(0)
@@ -78,6 +78,8 @@ model Post {
   userEmail String
   user      User      @relation(fields: [userEmail], references: [email])
   comments  Comment[]
+
+  @@index([title], name: "textIndex")
 }
 
 model Comment {

@@ -1,0 +1,201 @@
+.container {
+    margin: 0 auto;
+    margin-top: 80px;
+    min-height: 80vh;
+    max-width: 80%;
+    min-width: 400px;
+
+}
+
+
+.profile_title {
+    padding-top: 50px;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--textColor);
+    text-transform: uppercase;
+}
+.profile {
+    background-color: var(--softBg);
+    border-radius: 40px;
+    padding-top: 40px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.profile h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--softTextColor);
+    text-transform: uppercase;
+    outline-offset: 10px;
+}
+
+.image_box{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--softTextColor);
+}
+
+.input_box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input_box input{
+    width: 40vw;
+    margin-top: 20px;
+    min-width: 320px;
+    text-align: center;
+    padding: 20px 40px;
+    border: 1px solid var(--softTextColor);
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    font-weight: 500;
+    color: var(--softTextColor);
+    background-color: var(--softBg);
+    cursor: not-allowed;
+    position: relative;
+}
+
+.input_box label{
+    position: absolute;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(224, 132, 98, 0.823);
+    margin-top: 10px;
+    background-color: var(--softBg);
+    z-index: 10;
+    padding: 0 10px;
+}
+
+/* my posts  */
+
+.myPost{
+    margin-top: 80px;
+}
+
+.posts{
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.post_container {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+    background-color: var(--bg);
+  }
+  
+  .imageContainer {
+    flex: 2;
+    height: 130px;
+    position: relative;
+  }
+  
+  .image {
+    object-fit: cover;
+  }
+  
+  .textContainer {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .date {
+    margin-right: 10px;
+    color: gray;
+  }
+  
+  .category {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--bg);
+    text-transform: uppercase;
+    width: max-content;
+  }
+  
+  .category.travel {
+    background-color: #ff7857;
+  }
+  
+  .fitness {
+    background-color: #ffb14f;
+  }
+  
+  .food {
+    background-color: #7fb881;
+  }
+  
+  .fashion {
+    background-color: #ff7887;
+  }
+  
+  .tech {
+    background-color: #775aec;
+  }
+  
+  .sports {
+    background-color: #789cff;
+  }
+  
+  
+  .link {
+    border-bottom: 1px solid var(--softTextColor);
+    width: max-content;
+    padding: 2px 0px;
+  }
+  .link:hover {
+    border-bottom: none;
+  }
+  
+  @media screen and (max-width: 1280px) {
+    .imageContainer {
+      display: none;
+    }
+  }
+  
+
+  @media screen and (max-width: 450px) {
+    .container {
+      margin: 0 auto;
+      max-width: 100%;
+      min-width: 320px;
+  
+  }
+  }
+  @media screen and (max-width: 340px) {
+    .container {
+      margin: 0 auto;
+      max-width: 100%;
+      min-width: 290px;
+  
+  }
+  .input_box input{
+    min-width: 260px;
+    text-align: center;
+    padding: 20px 10px;
+}
+  }

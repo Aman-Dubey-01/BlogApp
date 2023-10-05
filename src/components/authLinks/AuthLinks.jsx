@@ -5,6 +5,7 @@ import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { BsFillPencilFill } from 'react-icons/bs';
 import { Button } from "../UI/Button";
+import { BiUserCircle } from "react-icons/bi";
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
@@ -19,13 +20,18 @@ const AuthLinks = () => {
         </Link>
       ) : (
         <>
+          <Link href="/profile" className={styles.link}>
+            <div className={styles.link_inner}>
+              <Button value="Profile" href="/profile" ><BiUserCircle className={styles.link_icon} /> </Button>
+            </div>
+          </Link>
           <Link href="/write" className={styles.link}>
             <div className={styles.link_inner}>
-              <Button value="Write" href="/write" ><BsFillPencilFill /> </Button>
+              <Button value="Write" href="/write" ><BsFillPencilFill className={styles.link_icon} /> </Button>
             </div>
           </Link>
           <span className={styles.link} onClick={signOut}>
-            <div className={`${styles.link_button} ${styles.link_rev}` }>Logout</div>
+            <div className={`${styles.link_button} ${styles.link_rev}`}>Logout</div>
           </span>
         </>
       )}
@@ -37,17 +43,17 @@ const AuthLinks = () => {
       {open && (
         <div className={styles.responsiveMenu}>
           <Link href="/" className={styles.burger_link} onClick={() => setOpen(!open)}>Home</Link>
-          <Link href="/#category" className={styles.burger_link} onClick={() => setOpen(!open)}>Category</Link>
-          <Link href="/#footer" className={styles.burger_link} onClick={() => setOpen(!open)}>About</Link>
+          <Link href="/blog" className={styles.burger_link} onClick={() => setOpen(!open)}>Blog</Link>
           {status === "unauthenticated" ? (
             <Link href="/login"><div className={styles.link_button}>Login</div> </Link>
           ) : (
             <>
+              <Link href="/profile" className={styles.burger_link} onClick={() => setOpen(!open)}>Profile</Link>
               <Link href="/write">
                 <Link href="/write" className={styles.burger_link} onClick={() => setOpen(!open)} >Write</Link>
               </Link>
               <span className={styles.link} onClick={signOut}>
-                <div >Logout</div>
+                <Link href="/login"><div className={styles.link_button} onClick={() => setOpen(!open)}>Logout</div> </Link>
               </span>
             </>
           )}

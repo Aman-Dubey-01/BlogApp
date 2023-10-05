@@ -25,6 +25,11 @@
   filter: drop-shadow(1px 2px 5px rgba(23, 102, 109, 0.3));
 }
 
+.logo_img {
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+}
 
 
 .logo_item{
@@ -60,6 +65,10 @@
   }
 }
 @media screen and (max-width: 1024px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
   .logo {
     font-size: 1.7rem;
   }
@@ -96,12 +105,21 @@
   .link_icon{
     display: none;
   }
+  .logo_img {
+    width: 1.4rem;
+    height: 1.5rem;
+  }
   
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 540px) {
 
   .logo {
     font-size: 1rem;
+    margin: auto 8px;
+  }
+  .logo_img {
+    width: 1.4rem;
+    height: 1.1rem;
   }
   .links{
     justify-content: flex-end;

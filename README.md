@@ -1,4 +1,5 @@
 New features :
+add size prop to image for performance
 >Seacrch blog 
 >Profile section
 >My blog (in profile)
