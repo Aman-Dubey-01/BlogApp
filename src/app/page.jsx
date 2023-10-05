@@ -4,6 +4,7 @@ import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
 import Menu from "@/components/Menu/Menu";
 import { Button } from "@/components/UI/Button";
+import Link from "next/link";
 
 
 export default function Home({ searchParams }) {
@@ -21,6 +22,9 @@ export default function Home({ searchParams }) {
           />
           <Menu />
         </div>
+        <Link href="/blog">
+          <button href='/blog' className={styles.button}>Explore Blog</button>
+        </Link>
       </div>
     </div>
   </div>;

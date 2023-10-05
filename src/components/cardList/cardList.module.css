@@ -12,31 +12,4 @@
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
 }
-.button {
-  margin: 50px auto;
-  padding: 12px 20px;
-  color: var(--bg);
-  text-decoration: none;
 
-  background: var(--textColor);
-  cursor: pointer;
-  transition: ease-out 0.5s;
-  border: none;
-  border-radius: 8px;
-  box-shadow: inset 0 0 0 0 var(--bg);
-
-  display: flex;
-  align-items: Center;
-  justify-content: center;
-  gap: 5px;
-font-size: 1.2rem;
-letter-spacing: .5px;
-}
-
-.button:hover {
-  transform: scale(1.1);
-}
-
-.button:active {
-  transform: scale(0.9);
-}
