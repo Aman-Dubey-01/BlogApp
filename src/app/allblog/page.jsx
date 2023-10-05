@@ -8,7 +8,7 @@ import { Loading } from '@/components/Loading/LoadingSpinner';
 import Menu from '@/components/Menu/Menu';
 import Category from '@/components/Category/Category';
 
-const allblog = async ({ searchParams }) => {
+const Allblog = async ({ searchParams }) => {
     const [post, setPosts] = useState([]);
     const [count, setCount] = useState(1);
     const [loading, setLoading] = useState(false);
@@ -77,4 +77,4 @@ const allblog = async ({ searchParams }) => {
     )
 }
 
-export default allblog;
+export default Allblog;
