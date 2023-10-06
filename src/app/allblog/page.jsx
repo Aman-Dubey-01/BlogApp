@@ -32,10 +32,13 @@ const Allblog = async ({ searchParams }) => {
         fetchData();
     }, [page, searchQuery]);
 
+    const isLocalhost = window.location.hostname === 'localhost';
+    const urlStart = isLocalhost ? 'http://localhost:3000' : 'https://penchapters.vercel.app';
+    
     const getData = async (page) => {
         try {
             setLoading(true);
-            const response = await fetch(`/api/allblog?page=${page}&&search=${searchQuery}`);
+            const response = await fetch(`${urlStart}/api/allblog?page=${page}&&search=${searchQuery}`);
             const { posts, count } = await response.json();
             return { posts, count };
         } catch (error) {
