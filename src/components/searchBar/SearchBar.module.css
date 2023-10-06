@@ -23,11 +23,13 @@
 }
 
 .search-bar button {
-    height: 100%;
     border: none;
+    font-size: 1rem;
     background-color: transparent;
     cursor: pointer;
-    margin: 5px;
+    margin: auto 5px;
+    width:fit-content;
+
 }
 
 .search-bar button:hover {
