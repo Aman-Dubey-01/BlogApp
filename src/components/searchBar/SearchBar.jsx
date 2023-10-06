@@ -15,10 +15,7 @@ export const SearchBar = () => {
     };
 
     const handleSubmit = (e) => {
-        const isLocalhost = window.location.hostname === 'localhost';
-    const urlStart = isLocalhost ? 'http://localhost:3000' : 'https://penchapters.vercel.app';
-
-        router.push(`${urlStart}/allblog?search=${searchValue}`);
+        router.push(`/allblog?search=${searchValue}`);
         e.preventDefault();
         setSearchValue('');
         // setShowInput(false);

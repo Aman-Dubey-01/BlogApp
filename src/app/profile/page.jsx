@@ -39,7 +39,7 @@ function Profile() {
                 <div className={styles.info}>
                     <h2>Basic Info</h2>
                     <div className={styles.image_box}>
-                        <img src={user?.image} alt="Image" />
+                        <Image src={user?.image} alt="Image" height={100} width={100}/>
                     </div>
                     <div className={styles.input_box}>
                         <input id="name" type="text" value={user.name} />

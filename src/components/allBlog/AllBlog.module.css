@@ -1,0 +1,58 @@
+.container{
+    margin: 0 auto;
+    margin-top: 80px;
+    max-width: 90%;
+    min-height: 80vh;
+    padding-top: 40px;
+}
+
+.search_result{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+.search_result span{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: orangered;
+}
+
+.content{
+    display: flex;
+    gap: 50px;
+    
+}
+
+.post_side{
+    flex: 6;
+    
+    margin-top: 50px;
+}
+
+.posts{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.menu_side{
+    flex: 2;
+}
+
+
+@media screen and (max-width: 1024px) {
+    
+    .post_side {
+      flex: 1;
+    }
+    .menu_side{
+        flex: 0;
+    }
+    .content{
+        display: flex;
+        gap: 0px;
+        
+    }
+
+  }
