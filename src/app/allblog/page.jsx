@@ -33,7 +33,7 @@ const Allblog = async ({ searchParams }) => {
     }, [page, searchQuery]);
 
     const isLocalhost = window.location.hostname === 'localhost';
-    const urlStart = isLocalhost ? 'http://localhost:3000' : 'https://blog-frontend-phi.vercel.app';
+    const urlStart = isLocalhost ? 'http://localhost:3000' : 'https://penchapters.vercel.app';
     const getData = async (page) => {
         try {
             setLoading(true);
