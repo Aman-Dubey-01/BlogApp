@@ -38,6 +38,7 @@ const Allblog = async ({ searchParams }) => {
     const getData = async (page) => {
         try {
             setLoading(true);
+            console.log("url", `${urlStart}/api/allblog?page=${page}&&search=${searchQuery}`)
             const response = await fetch(`${urlStart}/api/allblog?page=${page}&&search=${searchQuery}`);
             const { posts, count } = await response.json();
             return { posts, count };
