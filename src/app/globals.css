@@ -66,6 +66,9 @@ a {
 }
 
 .ql-toolbar.ql-snow {
+  background-color: white !important;
+  border-radius:.8rem .8rem 0 0 !important;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important;
   border: none !important;
   border-bottom: 1px solid black !important;
 }
