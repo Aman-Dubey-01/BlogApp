@@ -6,7 +6,7 @@ import AuthLinks from "../authLinks/AuthLinks";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 
 import { ImHome } from 'react-icons/im';
-import { BiCategory,BiUserCircle } from 'react-icons/bi';
+import { BiCategory } from 'react-icons/bi';
 import { Button } from "../UI/Button";
 import { SearchBar } from "../searchBar/SearchBar";
 const Navbar = () => {
@@ -16,7 +16,6 @@ const Navbar = () => {
         <div className={styles.logo}>
           <Link href="/" className={styles.logo_item}>
             <Image className={styles.logo_img} src="/logoicon.png" alt="logo" width={32} height={32} />
-            {/* <p>&nbsp;𝐏𝐞𝐧𝐂𝐡𝐚𝐩𝐭𝐞𝐫𝐬</p> */}
             <div className={styles.logo_text}>&nbsp;𝐏𝐞𝐧𝐂𝐡𝐚𝐩𝐭𝐞𝐫𝐬</div>
           </Link>
         </div>

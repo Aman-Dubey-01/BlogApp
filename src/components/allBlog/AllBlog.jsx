@@ -13,10 +13,6 @@ const Allblog = async ({ page, searchQuery }) => {
     const [count, setCount] = useState(1);
     const [loading, setLoading] = useState(false);
 
-
-    // const page = parseInt(page) || 1;
-    // const searchQuery = searchQuery || '';
-
     useEffect(() => {
         const fetchData = async () => {
             console.log("page", page)
