@@ -1,6 +1,6 @@
 "use client";
 
-import "react-quill/dist/quill.bubble.css";
+import "react-quill/dist/quill.snow.css";
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
@@ -39,14 +39,13 @@ const WritePage = () => {
   const modules = {
     toolbar: [
       // ...
+      [{ 'size': ['small', false, 'large', 'huge'] }],
       [{ 'header': '1' }, { 'header': '2' }],
       [{ 'list': 'ordered' }, { 'list': 'bullet' }],
       ['bold', 'italic', 'underline', 'strike'],
       [{ 'color': [] }, { 'background': [] }],
       [{ 'align': [] }],
-      ['link', 'image'],
-      [{ 'size': ['small', false, 'large', 'huge'] }],
-      ['clean']
+      ['link']
     ],
   };
 
@@ -186,18 +185,22 @@ const WritePage = () => {
         <div className={styles.quill}>
           <ReactQuill
             className={styles.textArea}
-            theme="bubble"
+            theme="snow"
             value={value}
             onChange={setValue}
             placeholder="Write your story..."
             modules={modules}
           />
         </div>
+        <button className={styles.publishdown} onClick={handleSubmit}>
+        Publish
+      </button>
       </div>
 
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
       </button>
+      
       </>
 
       :

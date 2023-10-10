@@ -59,6 +59,22 @@ a {
   margin-right: auto;
 }
 
+.ql-container {
+  font-size: 1.4rem !important;
+  height:91% !important;
+  border: none !important;
+}
+
+.ql-toolbar.ql-snow {
+  border: none !important;
+  border-bottom: 1px solid black !important;
+}
+
+.quill>.ql-container>.ql-editor.ql-blank::before {
+  color: #b3b3b1;
+
+}
+
 @media screen and (max-width: 1536px) {
   .wrapper {
     max-width: 90%;
@@ -96,12 +112,8 @@ a {
   .wrapper {
     width: 90%;
   }
+  .ql-container {
+    font-size: 1.2rem !important;
+  }
 }
 
-.ql-container {
-  font-size: 28px !important;
-}
-
-.quill>.ql-container>.ql-editor.ql-blank::before {
-  color: #b3b3b1;
-}
